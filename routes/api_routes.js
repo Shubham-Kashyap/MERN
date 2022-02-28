@@ -1,5 +1,5 @@
 const express = require('express');
-const api = express.Router();
+const router = express.Router();
 
 
 // @ import controllers 
@@ -7,7 +7,7 @@ const UserController = require('../controllers/api/UserController');
 
 
 // UserController routes 
-api.get('signup', UserController.userSignup);
+router.get('/signup', UserController.userSignup);
 
 
-module.exports = api;
+module.exports = router;
