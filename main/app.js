@@ -1,7 +1,21 @@
 const express = require('express')
 const app = express();
+const chalk = require('chalk');
 
+/** For request body parsing */
+// app.use(express.json());
+app.use(express.urlencoded({
+    extended: true
+}));
+/** For request body parsing */
 
+app.use((req, res, next) => {
+    // For example, a GET request to `/test` will print "GET /test"
+    console.log(req.body);
+    var fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
+    console.log(chalk.yellow(`${req.method} : ${fullUrl}`));
+    next();
+});
 
 /**define app routes */
 app.use('/web/v1', require('../routes/web_routes'));
