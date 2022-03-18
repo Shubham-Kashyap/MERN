@@ -7,9 +7,9 @@ const UserController = require('../controllers/api/UserController');
 
 
 // UserController routes 
-api.get('/signup', UserController.userSignup);
-api.get('/fetch-profile', auth, UserController.fetchProfile);
-api.get('/update-profile', auth, UserController.updateProfile);
+api.post('/signup', UserController.userSignup);
+api.post('/fetch-profile', auth, UserController.fetchProfile);
+api.post('/update-profile', auth, UserController.updateProfile);
 
 
 module.exports = api;

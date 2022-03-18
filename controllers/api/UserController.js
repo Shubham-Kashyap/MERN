@@ -1,9 +1,8 @@
 /**
  * @Library imports
  */
-const Response = require('../../utils/Response');
-const chalk = require('chalk');
-// const { chalk, Response } = require('../../exports/Library');
+const User = require("../../model/user");
+const Response = require("../../utils/Response");
 
 
 
@@ -13,10 +12,11 @@ class UserController {
         Response.returnSuccessResponse(res, 'hello this is signup api');
     }
     async fetchProfile(req, res) {
+        console.log()
         Response.returnSuccessResponse(res, 'hello this is fetch profile api');
     }
-    async updateProfile(req, res) {
-        return Response.returnSuccessResponse(res, 'hello this is update profile api');
+    async updateProfile() {
+        Response.returnSuccessResponse(res, 'hello this is update profile api');
     }
 }
 
