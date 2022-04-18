@@ -14,10 +14,12 @@ class UserController {
     async userSignup(req, res) {
         try {
             await validator.validateRequest(req, {
-                email: "required|email"
+                name: 'required',
+                email: "required|email",
+                phone_no: "required|numeric"
             }, {
-                'required.email': 'The :attribute field is required now fuck off'
-            })
+                'required.email': 'The :attribute field is required now back off'
+            });
             Response.returnSuccessResponse(res, 'hello this is signup api');
         } catch (error) {
             Response.returnErrorResponse(res, error.message)

@@ -5,12 +5,13 @@ const Validator = require('validatorjs');
 
 class Validate {
     async validateRequest(request_data, rules, custom_error_messages = {}, set_attribute_name = {}) {
-        var val = new Validator(request_data, rules, custom_error_messages)
+        
+        var val = new Validator(request_data.body, rules, custom_error_messages)
         if (val.fails()) {
-            console.log(val.fails());
+            // console.log(val.errors.get())
             throw new Error(val.errors.get());
         }
-        return data;
+        return request_data;
     }
 
     async unique(data, rules) {
