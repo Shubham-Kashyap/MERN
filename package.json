@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node server",
     "server": "nodemon server",
-    "dev": "npx nodemon"
+    "dev": "npx nodemon",
+    "app": ""
   },
   "author": "shubham kashyap",
   "license": "MIT",

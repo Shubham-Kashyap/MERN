@@ -31,7 +31,6 @@ const User = sequelize.define('User', {
         allowNull: false,
         defaultValue: "user",
     },
-
     address: {
         type: DataTypes.TEXT('long'),
         allowNull: true,
