@@ -16,6 +16,9 @@ module.exports = {
         admin_routes: require('../routes/admin_routes'),
         api_routes: require('../routes/api_routes'),
         web_routes: require('../routes/web_routes'),
+    },
+    models: function () {
+        // process.env.
     }
 
 
