@@ -10,6 +10,7 @@ module.exports = {
     mysql2: require('mysql2'),
     sequelize: require('sequelize'),
     express_validator: require('express-validator'),
+    jwt : require('jsonwebtoken'),
 
     /** @library imports custom*/
     routes: {
