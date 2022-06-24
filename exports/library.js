@@ -10,8 +10,8 @@ module.exports = {
     mysql2: require('mysql2'),
     sequelize: require('sequelize'),
     express_validator: require('express-validator'),
-    jwt : require('jsonwebtoken'),
-
+    jwt: require('jsonwebtoken'),
+    // bcrypt: require('bcrypt'),
     /** @library imports custom*/
     routes: {
         admin_routes: require('../routes/admin_routes'),

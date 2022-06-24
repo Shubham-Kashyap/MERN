@@ -5,6 +5,7 @@
 // const User = require('../../models/user')
 const Response = require("../../utils/Response");
 const { chalk, validator } = require('../../exports/library');
+const { generateToken } = require('../../services/auth');
 // const Validator = require('validatorjs');
 
 

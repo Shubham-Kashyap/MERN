@@ -1,6 +1,6 @@
 /** @library import  */
 const Validator = require('validatorjs');
-const expressValidator = require('express-validator');
+const { body, check, validationResult } = require('express-validator');
 /** @library import */
 
 
@@ -28,9 +28,50 @@ class Validate {
             console.log(param)
         }
     }
+    checkValidate = (req, res, next) => {
+        try {
+            const errors = validationResult(req);
+            if (!errors.isEmpty()) {
+                console.log(errors)
+                return res.status(422).json({
+                    status: false,
+                    message: errors.array()[0].msg,
+                    response: []
+                })
+            }
+            next();
+        }
+        catch (error) {
+            return res.status(404).json({
+                status: false,
+                message: error.message
+            })
+        }
+    }
+
+    validationRules = (method) => {
+        // console.log(method)
+        switch (method) {
+            case 'signup': {
+                return [
+                    check('name', 'name field is required').notEmpty().bail()
+                ]
+            }
+            default: {
+                return [];
+            }
+        }
+    }
+
+    validateRequest = (method) => [
+        this.validationRules(method),
+        this.checkValidate
+
+    ]
 }
 
-// validation.passes(); // true
-// validation.fails(); // false
+const object = new Validate();
 
-module.exports = new Validate();
+module.exports = {
+    validateRequest: () => object.validateRequest('signup')
+}
