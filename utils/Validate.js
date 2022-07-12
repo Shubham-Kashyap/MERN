@@ -54,7 +54,10 @@ class Validate {
         switch (method) {
             case 'signup': {
                 return [
-                    check('name', 'name field is required').notEmpty().bail()
+                    check('name', 'Name field is required').notEmpty().bail(),
+                    check('email')
+                        .notEmpty().withMessage('Email field is required').bail(),
+                    check('phone_no').isNumeric().withMessage("Phone number must be numeric").bail()
                 ]
             }
             default: {

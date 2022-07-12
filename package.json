@@ -10,6 +10,7 @@
     "app": "do nothing for now",
     "client": "client/ npm start"
   },
+  "type": "module",
   "author": "shubham kashyap",
   "license": "MIT",
   "dependencies": {
