@@ -16,6 +16,7 @@ Basic knowledge of **Node**, **React**, **Express**, **MongoDB**
 
 you can use any library from npm namely  **dotenv** and **config** to store and use your config variables in order to get the better understanding but make sure to have a `.env` file in your `/` {Parent} folder
 
+
 **Essential variables**
 
 - **DB_HOST**=
