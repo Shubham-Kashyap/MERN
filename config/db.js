@@ -18,13 +18,13 @@ switch (process.env.DB_TYPE) {
         sequelize
             .authenticate()
             .then(() => {
-                sequelize.sync();
+
                 console.log(chalk.yellow.bold.inverse("Success databse connected!"));
+
             })
             .catch((err) => {
                 console.log(err);
             });
-
         module.exports = { sequelize, Sequelize, Model, DataTypes };
         break;
     case "mongo_db":

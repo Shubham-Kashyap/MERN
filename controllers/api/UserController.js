@@ -2,7 +2,7 @@
  * @Library imports
  */
 // const User = require("../../model/user");
-// const User = require('../../models/user')
+const User = require('../../models/mysql/user')
 const Response = require("../../utils/Response");
 const { chalk, validator } = require('../../exports/library');
 const { generateToken } = require('../../services/auth');
@@ -24,7 +24,7 @@ class UserController {
             // await validator.requiredValidation(req.body, [email, name])
             Response.returnSuccessResponse(res, 'hello this is signup api');
         } catch (error) {
-            Response.returnErrorResponse(res, error.message)
+            Response.returnErrorResponse(res, error.message);
         }
 
     }
